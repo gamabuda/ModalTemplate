@@ -1,0 +1,29 @@
+﻿@page "/"
+
+<div class="overlay" @onclick="OpenSimpleModal">
+    <div class="h1-holder">
+        <h1>Click anywhere</h1>
+    </div>
+</div>
+
+@if(_showSimpleModal)
+{
+    @* here we pass parametr for component *@
+    <SimpleModal OnClose="CloseSimpleModal"></SimpleModal>
+}
+
+@code{
+    // Default position false
+    private bool _showSimpleModal = false;
+
+    // method for open modal invoke on perant component
+    private void OpenSimpleModal()
+    {
+        _showSimpleModal = true;
+    }
+    // method for open modal invoke on child component with callback
+    private void CloseSimpleModal()
+    {
+        _showSimpleModal = false;
+    }
+}

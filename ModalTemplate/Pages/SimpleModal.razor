@@ -1,0 +1,56 @@
+﻿<div class="w-100p h-100p">
+    <div class="window" tabindex="0">
+        <div class="window__title-bar">
+            <div class="window__title">
+                About Us
+            </div>
+            <button class="window__btn" @onclick="Close">
+                &times;
+            </button>
+        </div>
+
+        <div class="window__body">
+            <h1>About CSS Windows ✨</h1>
+            <p>
+                CSS Windows don't exist. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, maxime. Assumenda repudiandae obcaecati nam, quae distinctio vel numquam cupiditate quibusdam enim asperiores quas nulla perferendis soluta doloribus, sequi maiores maxime?
+            </p>
+            <p>
+                Delectus accusantium quod fuga eum nobis voluptas esse eaque voluptatibus ipsam in. Nesciunt perspiciatis itaque ipsum omnis iste provident qui voluptas recusandae, vel, voluptates facere veniam tempora accusantium molestias harum?
+            </p>
+            <h2>Get Started</h2>
+            <p>
+                In order to get started, install with npm:
+            </p>
+            <pre><code>.window__body {
+  flex-grow: 1;
+  background-color: white;
+  padding: var(--default-padding);
+}</code></pre>
+            <p>
+                Read the documentation to know more.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat deserunt, fuga adipisci hic reprehenderit architecto numquam, et dolorem temporibus eveniet eos sint iusto. Harum velit sit dolorum deserunt hic odit.
+            </p>
+            <p>
+                Delectus accusantium quod fuga eum nobis voluptas esse eaque voluptatibus ipsam in. Nesciunt perspiciatis itaque ipsum omnis iste provident qui voluptas recusandae, vel, voluptates facere veniam tempora accusantium molestias harum?
+            </p>
+        </div>
+
+        <div class="window__status-bar">
+            www &rarr; CSS &rarr; Experiments
+        </div>
+    </div>
+</div>
+
+@code {
+    // This is callback for CloseSimpleModal() in Index
+    [Parameter] 
+    public EventCallback OnClose { get; set; }
+
+    // Invoke EventCallback
+    private void Close()
+    {
+        OnClose.InvokeAsync();
+    }
+}
